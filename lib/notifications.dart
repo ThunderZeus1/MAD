@@ -8,7 +8,7 @@ void main() {
       create: (context) => ThemeProvider(),
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, _) => MaterialApp(
-          home: NotificationsScreen(),
+          home: const NotificationsScreen(),
           theme: ThemeData(
             primarySwatch: Colors.blue,
             brightness: Brightness.light,
@@ -30,12 +30,14 @@ void main() {
 }
 
 class NotificationsScreen extends StatelessWidget {
+  const NotificationsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         children: [
           _buildNotificationItem(
             icon: Icons.info_outline,
@@ -44,7 +46,7 @@ class NotificationsScreen extends StatelessWidget {
             time: '2 hours ago',
             context: context,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           _buildNotificationItem(
             icon: Icons.local_offer,
             title: 'Special Offer',
@@ -52,7 +54,7 @@ class NotificationsScreen extends StatelessWidget {
             time: '5 hours ago',
             context: context,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           _buildNotificationItem(
             icon: Icons.event_available,
             title: 'Event Reminder',
@@ -60,7 +62,7 @@ class NotificationsScreen extends StatelessWidget {
             time: '1 day ago',
             context: context,
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           _buildNotificationItem(
             icon: Icons.payment,
             title: 'Payment Confirmation',
@@ -85,10 +87,10 @@ class NotificationsScreen extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 16),
       color: Theme.of(context).brightness == Brightness.light ? Colors.white : Colors.grey[800],
       child: ListTile(
-        contentPadding: EdgeInsets.all(16),
+        contentPadding: const EdgeInsets.all(16),
         leading: Icon(
           icon,
           size: 36,
@@ -107,15 +109,15 @@ class NotificationsScreen extends StatelessWidget {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               description,
               style: TextStyle(fontSize: 16, color: Colors.grey[600]),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               time,
-              style: TextStyle(fontSize: 14, color: Colors.grey),
+              style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
           ],
         ),

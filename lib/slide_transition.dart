@@ -11,19 +11,19 @@ class SlideTransitionPage extends PageRouteBuilder {
       Offset beginOffset;
       switch (direction) {
         case AxisDirection.right:
-          beginOffset = Offset(1.0, 0.0);
+          beginOffset = const Offset(1.0, 0.0);
           break;
         case AxisDirection.left:
-          beginOffset = Offset(-1.0, 0.0);
+          beginOffset = const Offset(-1.0, 0.0);
           break;
         case AxisDirection.up:
-          beginOffset = Offset(0.0, 1.0);
+          beginOffset = const Offset(0.0, 1.0);
           break;
         case AxisDirection.down:
-          beginOffset = Offset(0.0, -1.0);
+          beginOffset = const Offset(0.0, -1.0);
           break;
         default:
-          beginOffset = Offset(1.0, 0.0); // Default to right if unspecified
+          beginOffset = const Offset(1.0, 0.0); // Default to right if unspecified
       }
       const end = Offset.zero;
       const curve = Curves.easeInOut;

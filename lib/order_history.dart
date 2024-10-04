@@ -53,7 +53,7 @@ class OrderHistoryScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: ListView.builder(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
         itemCount: orderHistory.length,
         itemBuilder: (context, index) {
           final historyItem = orderHistory[index];
@@ -79,10 +79,10 @@ class OrderHistoryScreen extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: 16),
       color: Theme.of(context).brightness == Brightness.light ? Colors.white : Colors.grey[800],
       child: ListTile(
-        contentPadding: EdgeInsets.all(16),
+        contentPadding: const EdgeInsets.all(16),
         title: Text(
           title,
           style: TextStyle(
@@ -94,7 +94,7 @@ class OrderHistoryScreen extends StatelessWidget {
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               description,
               style: TextStyle(
@@ -102,7 +102,7 @@ class OrderHistoryScreen extends StatelessWidget {
                 color: Theme.of(context).brightness == Brightness.light ? Colors.grey[600] : Colors.grey[400],
               ),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               date,
               style: TextStyle(

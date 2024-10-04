@@ -46,7 +46,7 @@ final List<Map<String, String>> tourismPackages = [
 
 void main() {
   runApp(MaterialApp(
-    home: SearchScreen(),
+    home: const SearchScreen(),
     theme: ThemeData(
       primarySwatch: Colors.blue,
       brightness: Brightness.light,
@@ -62,13 +62,15 @@ void main() {
 }
 
 class SearchScreen extends StatefulWidget {
+  const SearchScreen({super.key});
+
   @override
   _SearchScreenState createState() => _SearchScreenState();
 }
 
 class _SearchScreenState extends State<SearchScreen> {
   late List<Map<String, String>> filteredCompanies;
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
@@ -97,10 +99,10 @@ class _SearchScreenState extends State<SearchScreen> {
               onChanged: _filterCompanies,
               decoration: InputDecoration(
                 hintText: 'Search for Tourism Companies',
-                hintStyle: TextStyle(color: Colors.grey),
-                prefixIcon: Icon(Icons.search),
+                hintStyle: const TextStyle(color: Colors.grey),
+                prefixIcon: const Icon(Icons.search),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.clear),
+                  icon: const Icon(Icons.clear),
                   onPressed: () {
                     _searchController.clear();
                     _filterCompanies('');
@@ -118,7 +120,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               itemCount: filteredCompanies.length,
               itemBuilder: (context, index) {
                 final company = filteredCompanies[index];
@@ -137,9 +139,9 @@ class _SearchScreenState extends State<SearchScreen> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: ListTile(
-        contentPadding: EdgeInsets.all(12),
+        contentPadding: const EdgeInsets.all(12),
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.asset(
@@ -168,7 +170,7 @@ class _SearchScreenState extends State<SearchScreen> {
             color: Colors.grey[600],
           ),
         ),
-        trailing: Icon(Icons.keyboard_arrow_right),
+        trailing: const Icon(Icons.keyboard_arrow_right),
         onTap: () {
           // Navigate to company details or perform any action
         },
